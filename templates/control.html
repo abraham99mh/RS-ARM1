@@ -50,141 +50,57 @@
                                 <!--Inputs range-->
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <p style="font-weight: bold;">Motor0</p>
+                                        <div class="col-md-2">
+                                            <p class="text-center fw-bold">Motor0</p>
                                         </div>
-                                        <div class="col-md-8 d-flex justify-content-center">
-                                            <input type="range" value="180" class="form-range" min="0" max="360" name="Range0" id="Range0" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
-                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="row g-2">
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="0" name="GiroD0" id="GiroD0" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="1" name="GiroI0" id="GiroI0" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+                                        <div class="col-md-10 d-flex justify-content-center">
+                                            <input type="range" value="0" class="form-range" min="-360" max="360" name="Range0" id="Range0" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">0</output><span style="font-size: 1rem; margin-right: 1rem; margin-left: 0.5rem;">°</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <p style="font-weight: bold;">Motor1</p>
+                                        <div class="col-md-2">
+                                            <p class="text-center fw-bold">Motor1</p>
                                         </div>
-                                        <div class="col-md-8 d-flex justify-content-center">
+                                        <div class="col-md-10 d-flex justify-content-center">
                                             <input type="range" value="180" class="form-range" min="0" max="360" name="Range1" id="Range1" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
-                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="row g-2">
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="2" name="GiroD1" id="GiroD1" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="3" name="GiroI1" id="GiroI1" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem; margin-left: 0.5rem;">°</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <p style="font-weight: bold;">Motor2</p>
+                                        <div class="col-md-2">
+                                            <p class="text-center fw-bold">Motor2</p>
                                         </div>
-                                        <div class="col-md-8 d-flex justify-content-center">
+                                        <div class="col-md-10 d-flex justify-content-center">
                                             <input type="range" value="180" class="form-range" min="0" max="360" name="Range2" id="Range2" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
-                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="row g-2">
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="4" name="GiroD2" id="GiroD2" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="5" name="GiroI2" id="GiroI2" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem; margin-left: 0.5rem;">°</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <p style="font-weight: bold;">Motor3</p>
+                                        <div class="col-md-2">
+                                            <p class="text-center fw-bold">Motor3</p>
                                         </div>
-                                        <div class="col-md-8 d-flex justify-content-center">
+                                        <div class="col-md-10 d-flex justify-content-center">
                                             <input type="range" value="180" class="form-range" min="0" max="360" name="Range3" id="Range3" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
-                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="row g-2">
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="6" name="GiroD3" id="GiroD3" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="7" name="GiroI3" id="GiroI3" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem; margin-left: 0.5rem;">°</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <p style="font-weight: bold;">Motor4</p>
+                                        <div class="col-md-2">
+                                            <p class="text-center fw-bold">Motor4</p>
                                         </div>
-                                        <div class="col-md-8 d-flex justify-content-center">
+                                        <div class="col-md-10 d-flex justify-content-center">
                                             <input type="range" value="180" class="form-range" min="0" max="360" name="Range4" id="Range4" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
-                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="row g-2">
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="8" name="GiroD4" id="GiroD4" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="9" name="GiroI4" id="GiroI4" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem; margin-left: 0.5rem;">°</span>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1">
-                                            <p style="font-weight: bold;">Motor5</p>
+                                        <div class="col-md-2">
+                                            <p class="text-center fw-bold">Motor5</p>
                                         </div>
-                                        <div class="col-md-8 d-flex justify-content-center">
+                                        <div class="col-md-10 d-flex justify-content-center">
                                             <input type="range" value="180" class="form-range" min="0" max="360" name="Range5" id="Range5" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
-                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="row g-2">
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="10" name="GiroD5" id="GiroD5" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-md-6 d-grid px-xl-3">
-                                                    <button type="button" value="11" name="GiroI5" id="GiroI5" class="btn btn-secondary">
-                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem; margin-left: 0.5rem;">°</span>
                                         </div>
                                     </div>
                                 </div>
