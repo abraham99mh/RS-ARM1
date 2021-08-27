@@ -309,6 +309,8 @@ def controles():
                 #GPIO.output(STEP2, GPIO.LOW)
                 #sleep(0.0005)
         else: print("Ya no puede rotar mas este motor")
+            
+        print("quesoooooo")
         
 
     elif(move=="20"): print("Arriba terminado")
