@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RS Automation</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+    </head>
+
+    <body style="background-color: #0d161d;">
+
+        <div class="d-flex" id="wrapper">
+            <!--Barra lateral-->
+            <div class="bg-dark" id="sidebar-wrapper">
+                <img src="{{ url_for('static', filename='img/logo.png')}}" class="logo">
+                <div class="list-group list-group-flush my-3">
+                    <a class="list-group-item none"></a>
+                    <a href="/control" class="list-group-item list-group-item-action fw-bold active">
+                        <span>Control</span>
+                    </a>
+                    <a href="/ejecutar" class="list-group-item list-group-item-action fw-bold">
+                        <span>Ejecutar</span>
+                    </a>
+                    <a href="/crear" class="list-group-item list-group-item-action fw-bold">
+                        <span>Crear</span>
+                    </a>
+                    <a class="list-group-item none"></a>
+                </div>
+            </div>
+            <!--Barra lateral fin-->
+
+            <!--Contenido-->
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg bg-dark py-4 px-4">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ url_for('static', filename='img/toggle.svg')}}" id="menu-toggle"></img>
+                        <h2 class="navbar-title">Control</h2>
+                    </div>
+                </nav>
+                
+                <div class="container-fluid px-5">
+                    <div class="row g-5 my-2">
+                        <div class="col-md-10">
+                            <div class="card p-3 bg-secondary shadow-sm d-flex rounded">
+                                <p class="fs-6">Articulaciones</p>
+                                <!--Inputs range-->
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <p style="font-weight: bold;">Motor0</p>
+                                        </div>
+                                        <div class="col-md-8 d-flex justify-content-center">
+                                            <input type="range" value="180" class="form-range" min="0" max="360" name="Range0" id="Range0" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row g-2">
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="0" name="GiroD0" id="GiroD0" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="1" name="GiroI0" id="GiroI0" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <p style="font-weight: bold;">Motor1</p>
+                                        </div>
+                                        <div class="col-md-8 d-flex justify-content-center">
+                                            <input type="range" value="180" class="form-range" min="0" max="360" name="Range1" id="Range1" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row g-2">
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="2" name="GiroD1" id="GiroD1" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="3" name="GiroI1" id="GiroI1" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <p style="font-weight: bold;">Motor2</p>
+                                        </div>
+                                        <div class="col-md-8 d-flex justify-content-center">
+                                            <input type="range" value="180" class="form-range" min="0" max="360" name="Range2" id="Range2" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row g-2">
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="4" name="GiroD2" id="GiroD2" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="5" name="GiroI2" id="GiroI2" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <p style="font-weight: bold;">Motor3</p>
+                                        </div>
+                                        <div class="col-md-8 d-flex justify-content-center">
+                                            <input type="range" value="180" class="form-range" min="0" max="360" name="Range3" id="Range3" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row g-2">
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="6" name="GiroD3" id="GiroD3" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="7" name="GiroI3" id="GiroI3" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <p style="font-weight: bold;">Motor4</p>
+                                        </div>
+                                        <div class="col-md-8 d-flex justify-content-center">
+                                            <input type="range" value="180" class="form-range" min="0" max="360" name="Range4" id="Range4" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row g-2">
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="8" name="GiroD4" id="GiroD4" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="9" name="GiroI4" id="GiroI4" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1">
+                                            <p style="font-weight: bold;">Motor5</p>
+                                        </div>
+                                        <div class="col-md-8 d-flex justify-content-center">
+                                            <input type="range" value="180" class="form-range" min="0" max="360" name="Range5" id="Range5" oninput="this.nextElementSibling.value = this.value" style="padding-right: 1rem; padding-left: 1rem;">
+                                            <output style="margin-left: 1.5rem; min-width: 2rem;">180</output><span style="font-size: 1rem; margin-right: 1rem;">°</span>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row g-2">
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="10" name="GiroD5" id="GiroD5" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Der</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-6 d-grid px-xl-3">
+                                                    <button type="button" value="11" name="GiroI5" id="GiroI5" class="btn btn-secondary">
+                                                        <span class="px-sm-4 px-md-2 px-xl-4">Izq</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <!--Input velocidad-->
+                            <div class="card p-3 bg-secondary shadow-sm d-flex justify-content-around align-items-center rounded">
+                                <p class="fs-6">Velocidad</p>
+                                <div class="slider-wrapper d-flex justify-content-center">
+                                    <input type="range" class="form-range" min="1" max="100" value="1" step="1" name="RangeV" id="RangeV" oninput="this.nextElementSibling.value = this.value">
+                                    <output class="num-vel">1</output>
+                                </div>
+                                <button type="button" value="v" name="AVelocidad" id="AVelocidad" class="btn btn-secondary btn-vel">
+                                    <span class="px-sm-4 px-md-2 px-xl-4">Ajustar</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-bottom: 1rem;">
+                            <!--Input Coordenadas-->
+                            <div class="card p-3 bg-secondary shadow-sm d-flex rounded">
+                                <div>
+                                    <p class="fs-6">Coordenadas</p>
+                                </div>
+                                <div class="container" style="margin-top: 0.5rem; margin-bottom: 0.5rem ;">
+                                    <div class="row gy-2">
+                                        <div class="col-md-3" style="text-align: center;">
+                                            <span>X</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="" style="height: 1.5rem; text-align: center;" id="coorX" name="coorX">
+                                        </div>
+                                        <div class="col-md-3" style="text-align: center;">
+                                            <span>mm</span>
+                                        </div>
+                                        <div class="col-md-3" style="text-align: center;">
+                                            <span>Y</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="" style="height: 1.5rem; text-align: center;" id="coorY" name="coorY">
+                                        </div>
+                                        <div class="col-md-3" style="text-align: center;">
+                                            <span>mm</span>
+                                        </div>
+                                        <div class="col-md-3" style="text-align: center;">
+                                            <span>Z</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="" style="height: 1.5rem; text-align: center;" id="coorZ" name="coorZ">
+                                        </div>
+                                        <div class="col-md-3" style="text-align: center;">
+                                            <span>mm</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" value="c" name="ACoor" id="ACoor" class="btn btn-secondary btn-coor">
+                                            <span class="px-sm-4 px-md-2 px-xl-4">Ajustar</span>
+                                        </button>
+                                    </div>                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <!--Input botones-->
+                            <div class="card p-3 bg-secondary shadow-sm d-flex rounded">
+                                <div>
+                                    <p class="fs-6 mb-2">Controles</p>
+                                    <div class="container">
+                                        <div class="row d-flex align-items-center" style="height: 8.14rem;">
+                                            <div class="col-4">
+                                                <div class="container">
+                                                    <div class="d-flex flex-column"> 
+                                                        <div class="d-flex justify-content-center mb-3">
+                                                            <input type="image" src="{{ url_for('static', filename='img/arrow.svg')}}" value="0" name="vUp" id="vUp" class="arrows-v1" draggable="false">
+                                                        </div>
+                                                        <div class="d-flex justify-content-center">
+                                                            <input type="image" src="{{ url_for('static', filename='img/arrow.svg')}}" value="1" name="vDown" id="vDown" class="arrows-v2" draggable="false">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-4 d-flex justify-content-center align-items-center">
+                                                            <input type="image" src="{{ url_for('static', filename='img/arrow.svg')}}" value="2" name="hLeft" id="hLeft" class="arrows-h1" draggable="false">
+                                                        </div>
+                                                        <div class="col-4 d-flex justify-content-center">
+                                                            <div class="d-flex flex-column"> 
+                                                                <div class="d-flex justify-content-center mb-3">
+                                                                    <input type="image" src="{{ url_for('static', filename='img/arrow.svg')}}" value="3" name="hForward" id="hForward" class="arrows-h2" draggable="false">
+                                                                </div>
+                                                                <div class="d-flex justify-content-center">
+                                                                    <input type="image" src="{{ url_for('static', filename='img/arrow.svg')}}" value="4" name="hBackward" id="hBackward" class="arrows-h3" draggable="false">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4 d-flex justify-content-center align-items-center">
+                                                            <input type="image" src="{{ url_for('static', filename='img/arrow.svg')}}" value="5" name="hRight" id="hRight" class="arrows-h4" draggable="false">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-6 d-flex justify-content-end">
+                                                            <input type="image" src="{{ url_for('static', filename='img/arrow.svg')}}" value="6" name="rLeft" id="rLeft" class="arrows-r1" draggable="false">
+                                                        </div>
+                                                        <div class="col-6 d-flex justify-content-start">
+                                                            <input type="image" src="{{ url_for('static', filename='img/arrow.svg')}}" value="7" name="rRight" id="rRight" class="arrows-r2" draggable="false">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 d-flex align-items-end justify-content-center">
+                                                <span>Vertical</span>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-end justify-content-center">
+                                                <span>Horizontal</span>
+                                            </div>
+                                            <div class="col-4 d-flex align-items-end justify-content-center">
+                                                <span>Rotación</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <!--Contenido fin-->
+
+            
+        </div>
+
+        <script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/movement.js')}}"></script>
+    </body>
+    
+</html>

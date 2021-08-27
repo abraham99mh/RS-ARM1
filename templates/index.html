@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RS Automation</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+    </head>
+
+    <body style="background-color: #0d161d;">
+
+        <div class="d-flex" id="wrapper">
+            <!--Barra lateral-->
+            <div class="bg-dark" id="sidebar-wrapper">
+                <img src="{{ url_for('static', filename='img/logo.png')}}" class="logo">
+                <div class="list-group list-group-flush my-3">
+                    <a class="list-group-item none"></a>
+                    <a href="/control" class="list-group-item list-group-item-action fw-bold">
+                        <span>Control</span>
+                    </a>
+                    <a href="/ejecutar" class="list-group-item list-group-item-action fw-bold">
+                        <span>Ejecutar</span>
+                    </a>
+                    <a href="/crear" class="list-group-item list-group-item-action fw-bold">
+                        <span>Crear</span>
+                    </a>
+                    <a class="list-group-item none"></a>
+                </div>
+            </div>
+            <!--Barra lateral fin-->
+
+            <!--Contenido-->
+            <div id="page-content-wrapper">
+            
+                <nav class="navbar navbar-expand-lg bg-dark py-4 px-4">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ url_for('static', filename='img/toggle.svg')}}" id="menu-toggle"></img>
+                        <h2 class="navbar-title">Inicio</h2>
+                    </div>
+                </nav>       
+        
+            </div>
+            <!--Contenido fin-->
+
+            
+        </div>
+
+        <script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+    </body>
+    
+</html>

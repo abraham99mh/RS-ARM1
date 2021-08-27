@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RS Automation</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+        <link rel="preload" as="image" href="{{ url_for('static', filename='img/add.svg')}}">
+
+    </head>
+
+    <body style="background-color: #0d161d;">
+
+        <div class="d-flex" id="wrapper">
+            <!--Barra lateral-->
+            <div class="bg-dark" id="sidebar-wrapper">
+                <img src="{{ url_for('static', filename='img/logo.png')}}" class="logo">
+                <div class="list-group list-group-flush my-3">
+                    <a class="list-group-item none"></a>
+                    <a href="/control" class="list-group-item list-group-item-action fw-bold">
+                        <span>Control</span>
+                    </a>
+                    <a href="/ejecutar" class="list-group-item list-group-item-action fw-bold">
+                        <span>Ejecutar</span>
+                    </a>
+                    <a href="/crear" class="list-group-item list-group-item-action fw-bold active">
+                        <span>Crear</span>
+                    </a>
+                    <a class="list-group-item none"></a>
+                </div>
+            </div>
+            <!--Barra lateral fin-->
+
+            <!--Contenido-->
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg bg-dark py-4 px-4">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ url_for('static', filename='img/toggle.svg')}}" id="menu-toggle"></img>
+                        <h2 class="navbar-title">Crear</h2>
+                    </div>
+                </nav>
+                <div class="container-fluid px-5">
+                    <div class="row g-5 my-2">
+                        <div class="col-md-12">
+                            <div class="card p-3 bg-secondary shadow-sm d-flex rounded" style="height: 78.5vh;">
+                                <div class="container" style="margin-top: 1.8rem;">
+                                    <div class="row">
+
+                                        <div class="col-md-12 mb-4">
+                                            <div>
+                                                <label for="txtCrear" class="form-label fs-5">Agregue instrucciones</label>
+                                            </div>
+                                            
+                                            <div class="blocksC">
+                                                <div class="row rss">
+                                                    <div class="d-flex justify-content-center mb-2">
+                                                        <input type="image" src="{{ url_for('static', filename='img/add.svg')}}" value="agregarBloque" id="agregarBloque" draggable="false">
+                                                    </div>
+                                                </div>
+                                                <div class="row d-flex align-items-center mb-3 rss" id="rss0" value="0">
+                                                    <div class="col-md-1 text-center">
+                                                        <span>1</span>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="card bloque">
+                                                            <div class="row p-2">
+                                                                <div class="col-md-3 d-flex justify-content-center mb-2">
+                                                                    <div class="input-group input-group-sm">
+                                                                        <span class="input-group-text">M0</span>
+                                                                        <input type="number" min="-360" max="360" step="0.1" class="form-control text-end" placeholder="0" value="" id="m0Bloque0">
+                                                                        <span class="input-group-text">°</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 d-flex justify-content-center mb-2">
+                                                                    <div class="input-group input-group-sm">
+                                                                        <span class="input-group-text">M1</span>
+                                                                        <input type="number" min="-360" max="360" step="0.1" class="form-control text-end" placeholder="0" value="" id="m1Bloque0">
+                                                                        <span class="input-group-text">°</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 d-flex justify-content-center mb-2">
+                                                                    <div class="input-group input-group-sm">
+                                                                        <span class="input-group-text">M2</span>
+                                                                        <input type="number" min="-360" max="360" step="0.1" class="form-control text-end" placeholder="0" value="" id="m2Bloque0">
+                                                                        <span class="input-group-text">°</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 d-flex justify-content-center mb-2">
+                                                                    <div class="input-group input-group-sm">
+                                                                        <span class="input-group-text">Velocidad</span>
+                                                                        <input type="number" min="-360" max="360" step="0.1" class="form-control text-end" placeholder="0" value="" id="velBloque0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 d-flex justify-content-center">
+                                                                    <div class="input-group input-group-sm">
+                                                                        <span class="input-group-text">M3</span>
+                                                                        <input type="number" min="-360" max="360" step="0.1" class="form-control text-end" placeholder="0" value="" id="m3Bloque0">
+                                                                        <span class="input-group-text">°</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 d-flex justify-content-center">
+                                                                    <div class="input-group input-group-sm">
+                                                                        <span class="input-group-text">M4</span>
+                                                                        <input type="number" min="-360" max="360" step="0.1" class="form-control text-end" placeholder="0" value="" id="m4Bloque0">
+                                                                        <span class="input-group-text">°</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 d-flex justify-content-center">
+                                                                    <div class="input-group input-group-sm">
+                                                                        <span class="input-group-text">M5</span>
+                                                                        <input type="number" min="-360" max="360" step="0.1" class="form-control text-end" placeholder="0" value="" id="m5Bloque0">
+                                                                        <span class="input-group-text">°</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 d-flex justify-content-center">
+                                                                    <div class="input-group input-group-sm">
+                                                                        <span class="input-group-text">Sleep</span>
+                                                                        <input type="number" min="-360" max="360" step="0.1" class="form-control text-end" placeholder="0" value="" id="gradosBloque0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <div class="d-flex flex-column">
+                                                            <div class="upBloque" id="upBloque0"></div>
+                                                            <div class="downBloque" id="downBloque0"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <div class="d-flex flex-column"> 
+                                                            <div class="d-flex justify-content-center">
+                                                                <div class="imgElim d-flex justify-content-center eliminarBloque" id="eliminarBloque"> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div style="height: 0.3vh; background-color: #4C5155;"></div>
+                                        </div>
+                                        <div class="col-md-1 mb-3">
+                                            <a class="btn btn-secondary px-3 fs-5" href="/crear-dos">?</a>
+                                        </div>
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-2 mb-3">
+                                            <a class="btn btn-secondary p-1 px-3 fs-6" name="pruebaCrear" id="pruebaCrear" style="max-height: 2rem;">Probar</a>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Nombre archivo" aria-describedby="guardarArchivo" id="nombreArch" style="max-height: 2rem;">
+                                                <button class="btn btn-secondary px-sm-4 px-md-2 px-xl-3" type="button" id="guardarArchivo" style="max-height: 2rem;">Guardar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Contenido fin-->
+        </div>
+
+        <script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/FileSaver.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/blocks.js')}}"></script>
+    </body>
+    
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RS Automation</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+    </head>
+
+    <body style="background-color: #0d161d;">
+
+        <div class="d-flex" id="wrapper">
+            <!--Barra lateral-->
+            <div class="bg-dark" id="sidebar-wrapper">
+                <img src="{{ url_for('static', filename='img/logo.png')}}" class="logo">
+                <div class="list-group list-group-flush my-3">
+                    <a class="list-group-item none"></a>
+                    <a href="/control" class="list-group-item list-group-item-action fw-bold">
+                        <span>Control</span>
+                    </a>
+                    <a href="/ejecutar" class="list-group-item list-group-item-action fw-bold active">
+                        <span>Ejecutar</span>
+                    </a>
+                    <a href="/crear" class="list-group-item list-group-item-action fw-bold">
+                        <span>Crear</span>
+                    </a>
+                    <a class="list-group-item none"></a>
+                </div>
+            </div>
+            <!--Barra lateral fin-->
+
+            <!--Contenido-->
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg bg-dark py-4 px-4">
+                    <div class="d-flex align-items-center">
+                        <img src="{{ url_for('static', filename='img/toggle.svg')}}" id="menu-toggle"></img>
+                        <h2 class="navbar-title">Ejecutar</h2>
+                    </div>
+                </nav>
+
+                <div class="container-fluid px-5">
+                    <div class="row g-5 my-2">
+                        <div class="col-md-12">
+                            <div class="card p-3 bg-secondary shadow-sm d-flex rounded" style="height: 78.5vh;">
+                                <div class="container" style="margin-top: 1.8rem;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="mb-4" style="max-width: 82%;">
+                                                        <label for="formFile" class="form-label mb-3 fs-5">Importar archivo</label>
+                                                        <input class="form-control" type="file" id="formFile" accept=".rsa">
+                                                    </div>
+                                                </div>
+                                                <div class="col-3 d-grid mb-3">
+                                                    <button type="button" value="0" name="" id="btnLeer" class="btn btn-secondary p-1" disabled>
+                                                        <span >Leer</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-3 d-grid mb-3">
+                                                    <button type="button" value="0" name="" id="btnEjecutar" class="btn btn-secondary p-1" disabled>
+                                                        <span >Ejecutar</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea class="form-control align-top" type="text" id="txtInfo" readonly style="height: 45vh; background-color:#ced4da"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--Contenido fin-->            
+        </div>
+
+        <script src="{{ url_for('static', filename='js/jquery.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/execute.js')}}"></script>
+    </body>
+    
+</html>
