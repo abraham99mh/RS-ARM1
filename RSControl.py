@@ -351,6 +351,36 @@ def controles():
 
 '''
 
+    
+    @app.route("/pruebaCrear", methods=['POST'])
+    def preubaCrear():
+
+        valores = request.form.getlist('ValoresInp[]')
+        #print(valores)
+
+        m0 = float(valores[0])
+        print("\n==================\n")
+        print(m0)
+        m1 = float(valores[1])
+        m2 = float(valores[2])
+        m3 = float(valores[3])
+        m4 = float(valores[4])
+        m5 = float(valores[5])
+        velBloque = float(valores[6])
+        sleepBloque = float(valores[7])
+
+        #Set vel
+
+
+        #Movimientos de motores
+        if np.isnan(m0) or m0==0:
+            print("not move m0")
+        else: print("move m0")
+        
+        #Set sleep
+
+        return Response(status = 200)
+
     if __name__ == "__main__":
         app.run( port=8000, debug=True)
         app.run()
