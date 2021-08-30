@@ -184,172 +184,136 @@ while True:
         id = "Range5"
         Real_time_slider(id,content5)
         return Response(status = 200)
-    '''
-       #Motor 3
-@app.route('/motor3',methods = ['POST'])
-def motor3(): 
-    global giro0
-    global giro_realTime0
-    payload3 = "Range3"
-    posicion3 = Real_time_slider(giro0,giro_realTime0,payload3)
-    print(f"posición de 3 es: {posicion3}")
-    motor_move(posicion3, velocidad)
-    return Response(status = 200)
-
-       #Motor 4
-@app.route('/motor4',methods = ['POST'])
-def motor4(): 
-    global giro0
-    global giro_realTime0
-    payload4 = "Range4"
-    posicion4 = Real_time_slider(giro0,giro_realTime0,payload4)
-    print(f"posición de 4 es: {posicion4}")
-    motor_move(posicion4, velocidad)
-    return Response(status = 200)
-
-         #Motor 5
-@app.route('/motor5',methods = ['POST'])
-def motor5(): 
-    global giro0
-    global giro_realTime0
-    payload5 = "Range5"
-    posicion5 = Real_time_slider(giro0,giro_realTime0,payload5)
-    print(f"posición de 5 es: {posicion5}")
-    motor_move(posicion5, velocidad)
-    return Response(status = 200)
-
    
-@app.route("/controles", methods=['POST'])
 
-def controles():
+    @app.route("/controles", methods=['POST'])
 
-    global max
-    
-    move = request.form["Move"]
-    print("Move: " + move) 
+    def controles():
 
-    #Vertical - Arriba
-    if(move=="0"):
-        if(max<50):
-            print("Moviendo hacia arriba")
-            print("Max: " + str(max))
-            max +=1
-            
-            print("RotandoMotor_1_Der")
-            GPIO.output(DIR2, CW)
-            for x in np.arange(80):
-                GPIO.output(STEP2, GPIO.HIGH)
-                sleep(0.0005)
-                GPIO.output(STEP2, GPIO.LOW)
-                sleep(0.0005)
-            
-            print("RotandoMotor_1_Der")
-            GPIO.output(DIR, CCW)
-            for x in np.arange(88):
-                GPIO.output(STEP, GPIO.HIGH)
-                sleep(0.0005)
-                GPIO.output(STEP, GPIO.LOW)
-                sleep(0.0005)
-            
-            print("RotandoMotor_1_Der")
-            GPIO.output(DIR3, CW)
-            for x in np.arange(52):
-                GPIO.output(STEP3, GPIO.HIGH)
-                sleep(0.001)
-                GPIO.output(STEP3, GPIO.LOW)
-                sleep(0.001)
-        else: print("Ya no puede rotar mas este motor xdddddd")
-        
+        global max
 
-    elif(move=="20"): print("Arriba terminado")
-        
+        move = request.form["Move"]
+        print("Move: " + move) 
 
-    #Vertical - Abajo
-    elif(move=="1"):
-        if(max>-50):
-            print("Moviendo hacia abajo")
-            print("Max: " + str(max))
-            max -=1
-            
-            print("RotandoMotor_1_Der")
-            GPIO.output(DIR2, CCW)
-            for x in np.arange(80):
-                GPIO.output(STEP2, GPIO.HIGH)
-                sleep(0.0005)
-                GPIO.output(STEP2, GPIO.LOW)
-                sleep(0.0005)
-            
-            print("RotandoMotor_1_Der")
-            GPIO.output(DIR, CW)
-            for x in np.arange(88):
-                 GPIO.output(STEP, GPIO.HIGH)
-                 sleep(0.0005)
-                 GPIO.output(STEP, GPIO.LOW)
-                 sleep(0.0005)
-            
-            print("RotandoMotor_1_Der")
-            GPIO.output(DIR3, CCW)
-            for x in np.arange(52):
-                GPIO.output(STEP3, GPIO.HIGH)
-                sleep(0.001)
-                GPIO.output(STEP3, GPIO.LOW)
-                sleep(0.001)
-        else: print("Ya no puede rotar mas este motor") 
-        
-    elif(move=="21"): print("Abajo terminado")
+        #Vertical - Arriba
+        if(move=="0"):
+            if(max<50):
+                print("Moviendo hacia arriba")
+                print("Max: " + str(max))
+                max +=1
 
-    #Horizontal - Izquierda
-    elif(move=="2"):
-        print("Moviendo hacia izquierda")
-        print(move)
-        
-    elif(move=="22"):
-        print(move)
+                print("RotandoMotor_1_Der")
+                GPIO.output(DIR2, CW)
+                for x in np.arange(80):
+                    GPIO.output(STEP2, GPIO.HIGH)
+                    sleep(0.0005)
+                    GPIO.output(STEP2, GPIO.LOW)
+                    sleep(0.0005)
 
-    #Horizontal - Adelante
-    elif(move=="3"):
-        print("Moviendo hacia adelante")
-        print(move)
-        
-    elif(move=="23"):
-        print(move)
+                print("RotandoMotor_1_Der")
+                GPIO.output(DIR, CCW)
+                for x in np.arange(88):
+                    GPIO.output(STEP, GPIO.HIGH)
+                    sleep(0.0005)
+                    GPIO.output(STEP, GPIO.LOW)
+                    sleep(0.0005)
 
-    #Horizontal - Atrás
-    elif(move=="4"):
-        print("Moviendo hacia atras")
-        print(move)
-        
-    elif(move=="24"):
-        print(move)
+                print("RotandoMotor_1_Der")
+                GPIO.output(DIR3, CW)
+                for x in np.arange(52):
+                    GPIO.output(STEP3, GPIO.HIGH)
+                    sleep(0.001)
+                    GPIO.output(STEP3, GPIO.LOW)
+                    sleep(0.001)
+            else: print("Ya no puede rotar mas este motor")
 
-    #Horizontal - Derecha
-    elif(move=="5"):
-        print("Moviendo hacia derecha")
-        print(move)
-        
-    elif(move=="25"):
-        print(move)
-    
-    #Rotacion - Izq
-    elif(move=="6"):
-        print("Rotando hacia izq")
-        print(move)
-        
-    elif(move=="26"):
-        print(move)
-
-    #Rotacion - Der
-    elif(move=="7"):
-        print("Rotando hacia der")
-        print(move)
-        
-    elif(move=="27"):
-        print(move)
+        elif(move=="20"): print("Arriba terminado")
 
 
-    return Response(status = 200)
+        #Vertical - Abajo
+        elif(move=="1"):
+            if(max>-50):
+                print("Moviendo hacia abajo")
+                print("Max: " + str(max))
+                max -=1
 
-'''
+                print("RotandoMotor_1_Der")
+                GPIO.output(DIR2, CCW)
+                for x in np.arange(80):
+                    GPIO.output(STEP2, GPIO.HIGH)
+                    sleep(0.0005)
+                    GPIO.output(STEP2, GPIO.LOW)
+                    sleep(0.0005)
+
+                print("RotandoMotor_1_Der")
+                GPIO.output(DIR, CW)
+                for x in np.arange(88):
+                     GPIO.output(STEP, GPIO.HIGH)
+                     sleep(0.0005)
+                     GPIO.output(STEP, GPIO.LOW)
+                     sleep(0.0005)
+
+                print("RotandoMotor_1_Der")
+                GPIO.output(DIR3, CCW)
+                for x in np.arange(52):
+                    GPIO.output(STEP3, GPIO.HIGH)
+                    sleep(0.001)
+                    GPIO.output(STEP3, GPIO.LOW)
+                    sleep(0.001)
+            else: print("Ya no puede rotar mas este motor") 
+
+        elif(move=="21"): print("Abajo terminado")
+
+        #Horizontal - Izquierda
+        elif(move=="2"):
+            print("Moviendo hacia izquierda")
+            print(move)
+
+        elif(move=="22"):
+            print(move)
+
+        #Horizontal - Adelante
+        elif(move=="3"):
+            print("Moviendo hacia adelante")
+            print(move)
+
+        elif(move=="23"):
+            print(move)
+
+        #Horizontal - Atrás
+        elif(move=="4"):
+            print("Moviendo hacia atras")
+            print(move)
+
+        elif(move=="24"):
+            print(move)
+
+        #Horizontal - Derecha
+        elif(move=="5"):
+            print("Moviendo hacia derecha")
+            print(move)
+
+        elif(move=="25"):
+            print(move)
+
+        #Rotacion - Izq
+        elif(move=="6"):
+            print("Rotando hacia izq")
+            print(move)
+
+        elif(move=="26"):
+            print(move)
+
+        #Rotacion - Der
+        elif(move=="7"):
+            print("Rotando hacia der")
+            print(move)
+
+        elif(move=="27"):
+            print(move)
+
+
+        return Response(status = 200)
 
     
     @app.route("/pruebaCrear", methods=['POST'])
